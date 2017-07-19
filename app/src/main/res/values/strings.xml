@@ -2,5 +2,6 @@
     <string name="app_name">Piiper</string>
     <string name="intro_instructions">Connect Android device to RaspberryPi with USB tethering turned ON.</string>
     <string name="info_rpi_instructions">Configure RaspberryPi to automatically connect to USB tethering.</string>
-    <string name="info_tethering">USB tethering is currently turned </string>
+    <string name="info_tethering_off">USB tethering is currently turned OFF</string>
+    <string name="info_tethering_on">USB tethering is currently turned ON</string>
 </resources>
