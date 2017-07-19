@@ -4,4 +4,12 @@
     <string name="info_rpi_instructions">Configure RaspberryPi to automatically connect to USB tethering.</string>
     <string name="info_tethering_off">USB tethering is currently turned OFF</string>
     <string name="info_tethering_on">USB tethering is currently turned ON</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_connection_info">Connection Information</string>
+    <string name="default_username">pi</string>
+    <string name="default_password">raspberry</string>
 </resources>
