@@ -18,7 +18,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.InetAddress;
+import java.net.InterfaceAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
 import java.net.UnknownHostException;
+import java.util.Enumeration;
 
 public class ConnectionInfo extends AppCompatActivity {
 
@@ -30,8 +34,13 @@ public class ConnectionInfo extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.title_activity_connection_info);
 
+        // Grab bundle from MainActivity to get Rpi Address if it was found
+        Bundle bundle = getIntent().getExtras();
+        String hostname = bundle.getString("hostname");
+
         // Autofill text inputs with defaults
         final EditText txtIP = (EditText) findViewById(R.id.rpi_ip);
+        txtIP.setText(hostname);
         final EditText txtUser = (EditText) findViewById(R.id.rpi_default_user);
         txtUser.setText(R.string.default_username);
         final EditText txtPass = (EditText) findViewById(R.id.rpi_default_pass);
@@ -50,33 +59,13 @@ public class ConnectionInfo extends AppCompatActivity {
                 }
                 else
                 {
-                    WifiManager wm = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-                    String ip = Integer.toString(wm.getConnectionInfo().getIpAddress());
-
-                    // Run command
-                    Process shell = null;
-                    try {
-                        shell = Runtime.getRuntime().exec("grep e");
-
-                        BufferedReader br = new BufferedReader(new InputStreamReader(shell.getInputStream()));
-
-                        // Add bufferedreader to string
-                        String name = new String();
-
-                        for (String line; (line = br.readLine()) != null; name += line);
-
-                        Toast.makeText(ConnectionInfo.this, "ifconfig Results: " + name, Toast.LENGTH_LONG).show();
-                    } catch (IOException e) {
-                        Toast.makeText(ConnectionInfo.this, "Could not connect", Toast.LENGTH_LONG).show();
-                    }
-
                     // Show Toast
-                    Toast.makeText(ConnectionInfo.this, "IP Address: " + ip, Toast.LENGTH_LONG).show();
+                    Toast.makeText(ConnectionInfo.this, "Connect to RaspberryPi", Toast.LENGTH_LONG).show();
                 }
             }
         });
 
-        /*
+        /* // Floating buttom, might be of use later
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,5 +78,6 @@ public class ConnectionInfo extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
 
 }
