@@ -1,6 +1,7 @@
 package com.ensointeractive.piiper;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
@@ -49,6 +50,7 @@ public class ConnectionInfo extends AppCompatActivity {
             txtIP.setText(hostname);
         }
 
+        // Default usernames and passwords for RPi
         final EditText txtUser = (EditText) findViewById(R.id.rpi_default_user);
         txtUser.setText(R.string.default_username);
         final EditText txtPass = (EditText) findViewById(R.id.rpi_default_pass);
@@ -67,13 +69,18 @@ public class ConnectionInfo extends AppCompatActivity {
                 }
                 else
                 {
-                    // Show Toast
-                    Toast.makeText(ConnectionInfo.this, "Connect to RaspberryPi", Toast.LENGTH_LONG).show();
+                    // Go to ssh activity
+                    Intent intent = new Intent(ConnectionInfo.this, SSHActivity.class);
+                    intent.putExtra("hostname", txtIP.getText());
+                    intent.putExtra("username", txtUser.getText());
+                    intent.putExtra("password", txtPass.getText());
+                    startActivity(intent);
+                    // Toast.makeText(ConnectionInfo.this, "Connect to RaspberryPi", Toast.LENGTH_LONG).show();
                 }
             }
         });
 
-        /* // Floating button, might be of use later
+        /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +93,7 @@ public class ConnectionInfo extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
 
 
 }
