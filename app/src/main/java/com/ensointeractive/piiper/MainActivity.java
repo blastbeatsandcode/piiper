@@ -27,8 +27,10 @@ import com.gigamole.library.PulseView;
 
 public class MainActivity extends AppCompatActivity {
 
-    PulseView pulseView;
     final String INIT_IP = "192.168.42.";
+    final int MAX_IP_LENGTH = 15;
+
+    PulseView pulseView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         // Grab IP address for Pi if it is available
         String reachable = ping();
 
-        if (!reachable.equals("")) {
+        if (!reachable.equals("") && (reachable.length() <= MAX_IP_LENGTH)) {
             // USB address was found
             Toast.makeText(MainActivity.this, "Located address " + reachable, Toast.LENGTH_LONG).show();
             Log.d("STATUS", "connected to something!");

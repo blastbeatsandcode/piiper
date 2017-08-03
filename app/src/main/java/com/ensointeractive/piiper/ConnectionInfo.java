@@ -26,6 +26,9 @@ import java.util.Enumeration;
 
 public class ConnectionInfo extends AppCompatActivity {
 
+    // Max length an IPv4 can be
+    final int MAX_IP_LENGTH = 15;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +43,12 @@ public class ConnectionInfo extends AppCompatActivity {
 
         // Autofill text inputs with defaults
         final EditText txtIP = (EditText) findViewById(R.id.rpi_ip);
-        txtIP.setText(hostname);
+
+        // Checks to make sure we aren't being sent a bunch irrelevant connection info from previous activity
+        if (hostname.length() <= MAX_IP_LENGTH) {
+            txtIP.setText(hostname);
+        }
+
         final EditText txtUser = (EditText) findViewById(R.id.rpi_default_user);
         txtUser.setText(R.string.default_username);
         final EditText txtPass = (EditText) findViewById(R.id.rpi_default_pass);
