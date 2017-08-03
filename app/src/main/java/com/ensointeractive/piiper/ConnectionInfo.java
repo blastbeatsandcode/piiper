@@ -65,7 +65,7 @@ public class ConnectionInfo extends AppCompatActivity {
             }
         });
 
-        /* // Floating buttom, might be of use later
+        /* // Floating button, might be of use later
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

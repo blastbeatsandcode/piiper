@@ -28,6 +28,7 @@ import com.gigamole.library.PulseView;
 public class MainActivity extends AppCompatActivity {
 
     PulseView pulseView;
+    final String INIT_IP = "192.168.42.";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +46,11 @@ public class MainActivity extends AppCompatActivity {
 
     // Sends user to Connection Info activity and pings for IP
     public void goToConnectionInfo (View view) throws InterruptedException {
-        Toast.makeText(MainActivity.this, "Searching for Hostname...", Toast.LENGTH_LONG).show();
+        Toast.makeText(MainActivity.this, "Searching for Hostname...", Toast.LENGTH_SHORT).show();
 
+        // Grab IP address for Pi if it is available
         String reachable = ping();
+
         if (!reachable.equals("")) {
             // USB address was found
             Toast.makeText(MainActivity.this, "Located address " + reachable, Toast.LENGTH_LONG).show();
@@ -55,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         } else {
             // USB address was not found
             Toast.makeText(MainActivity.this, "Failed to connect to a hostname", Toast.LENGTH_LONG).show();
-            Log.d("STATUS", "failed to connect to a hostname");
         }
 
         // Start connection activity
@@ -115,8 +117,7 @@ public class MainActivity extends AppCompatActivity {
         String str = "";
         try {
             // sends command to get information for tethering interface
-            // rndis0 is the network interface android uses for a USB tethered device
-            Process process = Runtime.getRuntime().exec("/system/bin/ifconfig rndis0");
+            Process process = Runtime.getRuntime().exec("ip neighbor");
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             int i;
             char[] buffer = new char[4096];
@@ -129,24 +130,25 @@ public class MainActivity extends AppCompatActivity {
             reader.close();
 
             str = output.toString();
-            Log.d("STATE", str);
+            Log.d("STATE_UPDATE", str);
 
         } catch (IOException e) {
             e.printStackTrace();
-            Log.d("STATE", "Error");
+            Log.d("STATE_UPDATE", "Error");
         }
 
         // Regex pattern that matches IP addresses
-        String IPADDRESS_PATTERN = "(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)";
+        String IPADDRESS_PATTERN = "(?:" + INIT_IP + "*?\\.)(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)";
 
         Pattern pattern = Pattern.compile(IPADDRESS_PATTERN);
         Matcher matcher = pattern.matcher(str);
 
+
         // Verify that it matched a correct IP
-        if (matcher.find() && matcher.group().contains("192.168.42.")) {
+        if (matcher.find() && matcher.group().contains(INIT_IP)) {
             return matcher.group();
-        } else{
-            return "";
+        } else {
+            return str;
         }
     }
 
