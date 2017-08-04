@@ -33,5 +33,5 @@ dependencies {
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.android.support:support-vector-drawable:25.3.1'
     testCompile 'junit:junit:4.12'
-    compile files('libs/jsch-0.1.44.jar')
+    compile files('libs/jsch-0.1.54.jar')
 }
