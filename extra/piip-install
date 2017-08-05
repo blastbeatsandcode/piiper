@@ -1,0 +1,13 @@
+#!/bin/bash
+# Retrieve RaspberryPi usb0 IPv4 address
+# Call IP by using 'piip' command
+
+INSTALL_DIR=/usr/local/bin
+VAR=PIIP
+
+sudo printf "#!/bin/bash\n# Retrieve RaspberryPi usb0 IPv4 address\n# Call IP by using 'piip' command\n\n" > $INSTALL_DIR/piip
+sudo printf "$VAR=\$(ifconfig | perl -nle 's/dr:(\S+)/print \$1/e' | grep 192)\necho usb0 IP -  \$$VAR" >> $INSTALL_DIR/piip
+sudo chmod 755 $INSTALL_DIR/piip
+printf "Call usb0 IP by running the 'piip' command.\n"
+
+

@@ -1,0 +1,18 @@
+#!/bin/bash
+# Automatically enable USB tethering with RaspberryPi
+
+SOURCEDIR=/etc/network/interfaces
+NETWORKSERVICE=/etc/init.d/networking
+
+if grep -q 'allow-hotplug usb0' $SOURCEDIR; then
+	echo Automatic tethering has already been enabled. Check for connection when tethering to device.
+else
+	printf "Enabling automatic USB tethering..."
+	sudo touch $SOURCEDIR
+	sudo printf "\n\n#Enable automatic USB tethering\nallow-hotplug usb0\niface usb0 inet dhcp" >> $SOURCEDIR
+	
+	printf "Auto USB tethering enabled. Make sure to check for connection when tethering to device.\n"
+	printf "Restarting network device...\n\n\n"
+
+	sudo $NETWORKSERVICE restart
+fi
