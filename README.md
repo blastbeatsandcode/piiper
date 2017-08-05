@@ -70,6 +70,10 @@ ___
 
 <span style="color: gray">:white_square_button: Automate prescripted SSH commands to complete setup process</span>
 
+<span style="color: gray">:white_square_button: Add more sophisticated listener for tethering detection</span>
+
+<span style="color: gray">:white_square_button: Improve and clean up simple UI</span>
+
 
 ### :arrow_forward: Related Items
 [OLE Take-Home App](https://github.com/open-learning-exchange/take-home)
