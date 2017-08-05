@@ -71,11 +71,10 @@ public class ConnectionInfo extends AppCompatActivity {
                 {
                     // Go to ssh activity
                     Intent intent = new Intent(ConnectionInfo.this, SSHActivity.class);
-                    intent.putExtra("hostname", txtIP.getText());
-                    intent.putExtra("username", txtUser.getText());
-                    intent.putExtra("password", txtPass.getText());
+                    intent.putExtra("hostname", txtIP.getText().toString());
+                    intent.putExtra("username", txtUser.getText().toString());
+                    intent.putExtra("password", txtPass.getText().toString());
                     startActivity(intent);
-                    // Toast.makeText(ConnectionInfo.this, "Connect to RaspberryPi", Toast.LENGTH_LONG).show();
                 }
             }
         });
