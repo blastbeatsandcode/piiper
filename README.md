@@ -70,17 +70,21 @@ You can now universally use the ```piip``` command to return the proper IP addre
 ___
 
 ## :arrow_forward: Goals
-<span style="color: green">:ballot_box_with_check: Detect if USB tethering is turned ON</span>
+:ballot_box_with_check: Detect if USB tethering is turned ON
 
-<span style="color: green">:ballot_box_with_check: Obtain IP address of the RaspberryPi</span>
+:ballot_box_with_check: Obtain IP address of the RaspberryPi
 
-<span style="color: yellow">:white_square_button: Connect automatically to it with the push of a button via SSH</span>
+:ballot_box_with_check: Connect automatically to it with the push of a button via SSH
 
-<span style="color: gray">:white_square_button: Automate prescripted SSH commands to complete setup process</span>
+:ballot_box_with_check: Send custom commands from app and show output from console
 
-<span style="color: gray">:white_square_button: Add more sophisticated listener for tethering detection</span>
+:white_square_button: Keep SSH session open and consistent like a standard terminal
 
-<span style="color: gray">:white_square_button: Improve and clean up simple UI</span>
+:white_square_button: Add more sophisticated listener for tethering detection
+
+:white_square_button: Improve and clean up simple UI
+
+:white_square_button: Automate prescripted SSH commands to complete setup process (OLE - RPi)
 
 
 ### :arrow_forward: Related Items
