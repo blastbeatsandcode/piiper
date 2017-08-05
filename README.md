@@ -7,7 +7,7 @@ This project is in tandem with the efforts of [Open Learning Exchange](https://o
 
 [Current documentation](https://github.com/open-learning-exchange/take-home/issues/66) until it gets added here verbosely.
 ___
-## Turn On Automatic USB tethering
+## :arrow_forward: Turn On Automatic USB tethering
 
 **You will want your RaspberryPi to be configured to automatically accept USB tethering. This will enable you to headlessly use your device.**
 
@@ -31,7 +31,7 @@ Test your connection with ```ifconfig``` to check if usb0 is up and running with
 Your RPi is now ready for automatic USB tethering.
 ___
 
-## Retrieve RaspberryPi IP
+## :arrow_forward: Retrieve RaspberryPi IP
 
 This should return proper ip address, or if the third part is left out ( the `grep` call), we can generate a list of each one:
 
@@ -61,7 +61,7 @@ sudo mv /path/to/script.sh /usr/local/bin/piip
 You can now universally use the ```piip``` command to return the proper IP address of the Pi you need for SSH.
 ___
 
-## Goals
+## :arrow_forward: Goals
 <span style="color: green">:ballot_box_with_check: Detect if USB tethering is turned ON</span>
 
 <span style="color: green">:ballot_box_with_check: Obtain IP address of the RaspberryPi</span>
@@ -71,5 +71,5 @@ ___
 <span style="color: gray">:white_square_button: Automate prescripted SSH commands to complete setup process</span>
 
 
-### Related Items
+### :arrow_forward: Related Items
 [OLE Take-Home App](https://github.com/open-learning-exchange/take-home)
