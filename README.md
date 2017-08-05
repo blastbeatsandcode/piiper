@@ -4,7 +4,7 @@ This project is in tandem with the efforts of [Open Learning Exchange](https://o
 
 [Current documentation](https://github.com/open-learning-exchange/take-home/issues/66) until it gets added here verbosely.
 
->**RaspberryPi scripts are available inside /extra**
+>**RaspberryPi scripts are available inside [/extra](https://github.com/zeivhann/piiper/tree/master/extra)**
 
 <p align="center">
      <img src="https://raw.githubusercontent.com/zeivhann/piiper/master/app/src/main/res/drawable/piiper_icon.png" height="100" width="79" />
