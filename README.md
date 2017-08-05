@@ -1,15 +1,19 @@
 # Piiper
-<p align="center">
-     <img src="https://raw.githubusercontent.com/zeivhann/piiper/master/app/src/main/res/drawable/piiper_icon.png" height="100" width="79" />
-</p>
 
 This project is in tandem with the efforts of [Open Learning Exchange](https://ole.org) in setting up the RaspberryPi server via USB tethering from and Android device. It is but one leg on the greater project which will be [here](https://github.com/kylemathias/Mobile-Team-Projects).
 
 [Current documentation](https://github.com/open-learning-exchange/take-home/issues/66) until it gets added here verbosely.
+
+<p align="center">
+     <img src="https://raw.githubusercontent.com/zeivhann/piiper/master/app/src/main/res/drawable/piiper_icon.png" height="100" width="79" />
+</p>
+
 ___
 ## :arrow_forward: Turn On Automatic USB tethering
 
 **You will want your RaspberryPi to be configured to automatically accept USB tethering. This will enable you to headlessly use your device.**
+
+>**NOTE**: You may also download [this script](https://sourceforge.net/projects/automate-usb-tethering-rpi/files/auto-usb-tethering/download) to automatically do these steps for you. Just ```cd``` into where you downloaded the file and run ```sudo ./auto-usb-tethering```
 
 [Steps Taken from here](https://www.raspberrypi.org/forums/viewtopic.php?t=90728)
 
@@ -32,6 +36,8 @@ Your RPi is now ready for automatic USB tethering.
 ___
 
 ## :arrow_forward: Retrieve RaspberryPi IP
+
+>**NOTE**: You may also download [this script](https://sourceforge.net/projects/automate-usb-tethering-rpi/files/piip-install/download) to automatically do these steps for you. Just ```cd``` into where you downloaded the file and run ```sudo ./piip-install```.
 
 This should return proper ip address, or if the third part is left out ( the `grep` call), we can generate a list of each one:
 
@@ -58,7 +64,7 @@ sudo cmod 755 piip
 sudo mv /path/to/script.sh /usr/local/bin/piip
 ```
 
-You can now universally use the ```piip``` command to return the proper IP address of the Pi you need for SSH.
+You can now universally use the ```piip``` command to return the proper IP address of the Pi you need for SSH. This can be very beneficial when testing.
 ___
 
 ## :arrow_forward: Goals
