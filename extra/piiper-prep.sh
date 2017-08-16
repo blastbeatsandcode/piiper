@@ -12,6 +12,7 @@ bash piip-install
 # Remove script files
 rm auto-usb-tethering && rm piip-install
 
+echo ""
 echo "Set up for interaction with Piiper is complete."
 echo "If networking is not working properly, restart device."
 

@@ -9,7 +9,7 @@ This project is in tandem with the efforts of [Open Learning Exchange](https://o
 Download and run the scripts on your Raspberry Pi all at once with the following commands, or follow the steps in the documentation that follows:
 ```bash
 wget 'https://raw.githubusercontent.com/zeivhann/piiper/master/extra/piiper-prep.sh'
-sudo ./piiper-prep.sh
+sudo bash piiper-prep.sh
 ```
 
 <p align="center">
