@@ -1,10 +1,16 @@
 # Piiper
 
-This project is in tandem with the efforts of [Open Learning Exchange](https://ole.org) in setting up the RaspberryPi server via USB tethering from an Android device. It is but one leg on the greater project which will be [here](https://github.com/kylemathias/Mobile-Team-Projects).
+This project is in tandem with the efforts of [Open Learning Exchange](https://ole.org) in setting up the Raspberry Pi server via USB tethering from an Android device. It is but one leg on the greater project which will be [here](https://github.com/kylemathias/Mobile-Team-Projects).
 
 [Current documentation](https://github.com/open-learning-exchange/take-home/issues/66) until it gets added here verbosely.
 
->**RaspberryPi scripts are available inside [/extra](https://github.com/zeivhann/piiper/tree/master/extra)**
+>**Raspberry Pi scripts are available inside [/extra](https://github.com/zeivhann/piiper/tree/master/extra)**
+
+Download and run the scripts on your Raspberry Pi all at once with the following commands, or follow the steps in the documentation that follows:
+```bash
+wget 'https://raw.githubusercontent.com/zeivhann/piiper/master/extra/piiper-prep.sh'
+sudo ./piiper-prep.sh
+```
 
 <p align="center">
      <img src="https://raw.githubusercontent.com/zeivhann/piiper/master/app/src/main/res/drawable/piiper_icon.png" height="100" width="79" />
@@ -13,7 +19,7 @@ This project is in tandem with the efforts of [Open Learning Exchange](https://o
 ___
 ## :arrow_forward: Turn On Automatic USB tethering
 
-**You will want your RaspberryPi to be configured to automatically accept USB tethering. This will enable you to headlessly use your device.**
+**You will want your Raspberry Pi to be configured to automatically accept USB tethering. This will enable you to headlessly use your device.**
 
 >**NOTE**: You may also download [this script](https://sourceforge.net/projects/automate-usb-tethering-rpi/files/auto-usb-tethering/download) to automatically do these steps for you. Just ```cd``` into where you downloaded the file and run ```sudo ./auto-usb-tethering```
 
