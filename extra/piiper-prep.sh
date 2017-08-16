@@ -6,11 +6,11 @@ wget 'https://raw.githubusercontent.com/zeivhann/piiper/master/extra/auto-usb-te
 wget 'https://raw.githubusercontent.com/zeivhann/piiper/master/extra/piip-install'
 
 # Run scripts
-sudo ./auto-usb-tethering
-sudo ./piip-install
+bash auto-usb-tethering
+bash piip-install
 
 # Remove script files
-sudo rm auto-usb-tethering && rm piip-install
+rm auto-usb-tethering && rm piip-install
 
 # Delete this file
 rm -- "$0"
