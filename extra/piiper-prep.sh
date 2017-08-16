@@ -12,5 +12,8 @@ bash piip-install
 # Remove script files
 rm auto-usb-tethering && rm piip-install
 
+echo "\nSet up for interaction with Piiper is complete."
+echo "If networking is not working properly, restart device."
+
 # Delete this file
 rm -- "$0"
